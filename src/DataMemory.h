@@ -4,8 +4,10 @@
 #include <vector>
 #include <set>
 #include <cmath>
+#include <algorithm>
+#include <fstream>
 #include "DataSource.h"
-#include <algorithm> 
+
 
 template<class Tp, class TpY>
 class DataMemory:public DataSource<std::vector<Tp>, TpY>{
@@ -444,6 +446,8 @@ void DataMemory<Tp,TpY>::Shuffle(std::vector<int> &idx, std::vector<Tp> &param){
 	::Shuffle(param,idx);
 }
 
+/*
+
 template<class Tp,class TpY>
 bool DataMemory<Tp,TpY>::ReadSvmX(const char *name, const char *dlm, bool append){
 	char line[100000];
@@ -477,6 +481,7 @@ bool DataMemory<Tp,TpY>::ReadSvmX(const char *name, const char *dlm, bool append
 	fclose(f);
 	return true;
 }
+*/
 
 template<class Tp,class TpY>
 bool DataMemory<Tp,TpY>::ReadSvm(const char *name,const TpY valY, const char *dlm, bool append){
