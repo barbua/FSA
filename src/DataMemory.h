@@ -447,6 +447,7 @@ void DataMemory<Tp,TpY>::Shuffle(std::vector<int> &idx, std::vector<Tp> &param){
 }
 
 /*
+
 template<class Tp,class TpY>
 bool DataMemory<Tp,TpY>::ReadSvmX(const char *name, const char *dlm, bool append){
 	char line[100000];
