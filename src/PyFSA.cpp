@@ -1,24 +1,4 @@
-
-#ifdef _DEBUG
-#undef _DEBUG
-#include <Python.h>
-#include <arrayobject.h>
-#include <ndarrayobject.h>
-#define _DEBUG
-#else
-#include <Python.h>
-//#include <numpy/arrayobject.h>
-//#include <numpy/ndarrayobject.h>
-#include <arrayobject.h>
-#include <ndarrayobject.h>
-#endif
-#include <assert.h>
-#include <time.h>
-#include <vector>
-
 #include "PyFSA.h"
-#include "Fsa.h"
-#include "DataMemory.h"
 
 using namespace std;
 
