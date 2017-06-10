@@ -5,13 +5,13 @@ PROJECT(PyFSA)
 enable_language(CXX)
 enable_language(C)
 
-file(GLOB_RECURSE OCTAVE_LOCATION "/usr/include/octave*/octave/mex.h")
+file(GLOB_RECURSE OCTAVE_FULL_FILE_PATH "/usr/include/octave*/octave/mex.h")
 
-string(FIND ${OCTAVE_LOCATION} "mex.h" INDEX)
+string(FIND ${OCTAVE_FULL_FILE_PATH} "mex.h" INDEX)
 
-string(SUBSTRING ${OCTAVE_LOCATION} 0 ${INDEX} SUBDIRECTORY)
+string(SUBSTRING ${OCTAVE_FULL_FILE_PATH} 0 ${INDEX} OCTAVE_DIRECTORY)
 
-message(STATUS ${SUBDIRECTORY})
+message(STATUS ${OCTAVE_DIRECTORY})
 
 #Find Python
 find_package(PythonLibs REQUIRED)
@@ -23,7 +23,7 @@ include_directories(
   .  
   ../include
   ./include
-  ${SUBDIRECTORY}
+  ${OCTAVE_DIRECTORY}
   )
 
 link_directories(
@@ -79,10 +79,10 @@ ENDIF(WIN32)
 #SET_TARGET_PROPERTIES(PyFSA PROPERTIES LINK_FLAGS "/LIBPATH:C:/Python/libs" )
 target_link_libraries(PyFSA ${PYTHON_LIBRARIES})
 
-find_program(
-MEX_COMPILER
-NAMES mex
-PATHS /usr/bin/
-)
+#find_program(
+#MEX_COMPILER
+#NAMES mex
+#PATHS /usr/bin/
+#)
 
 execute_process(COMMAND mex -I${FSADIRECTORY} -std=c++11 -lPyFSA -L./ --mex -v ../src/mex_files/trainLinFSA.cpp)
