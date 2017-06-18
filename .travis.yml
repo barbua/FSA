@@ -3,7 +3,9 @@ before_install:
 - sudo apt-get install python
 - sudo apt-get install liboctave-dev
 
-
 script:
 - cd bin/
 - cmake ../
+
+language:
+- c++
