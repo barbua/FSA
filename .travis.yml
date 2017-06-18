@@ -1,0 +1,7 @@
+before_install:
+-sudo apt-get install octave
+-sudo apt-get install python
+
+script:
+-cd bin/
+-cmake ../
