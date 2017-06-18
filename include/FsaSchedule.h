@@ -25,7 +25,7 @@ int GetFsaScheduleE(int e, Tp percExp, int nExp, int maxEpoch, int kStar, int M,
 }
 
 template<class Tp>
-bool GetFsaIndices(std::vector<int> &idx, const std::vector<Tp> &sumSq, int nKeep, int strict=0){
+bool GetFsaIndices(std::vector<float> &idx, const std::vector<Tp> &sumSq, int nKeep, int strict=0){
 	int n=(int)sumSq.size();
 	if (nKeep>=n)
 		return false;
@@ -40,7 +40,7 @@ bool GetFsaIndices(std::vector<int> &idx, const std::vector<Tp> &sumSq, int nKee
 		}	
 		for (int i=0;i<n;++i) {
 			if (sumSq[i]==thr&&idx.size()<nKeep)
-				idx.push_back(i);
+				idx.push_back(static_cast<float>(i));
 		}
 		std::sort(idx.begin(),idx.end(),std::less<int>());	
 	}

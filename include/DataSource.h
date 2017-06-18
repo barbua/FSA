@@ -23,7 +23,8 @@ public:
 	virtual bool SetNextObs()=0;
 	virtual Tp *GetObs(TpY &y)=0;
 	virtual Tp *GetObs(TpY &y, int i)=0;
-	virtual void KeepOnly(std::vector<int> &vars, bool resize=false)=0;
+	//KeepOnly here takes floats too.
+	virtual void KeepOnly(std::vector<float> &vars, bool resize=false)=0;
 };
 
 #endif
