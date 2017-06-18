@@ -34,8 +34,10 @@ message(STATUS ${OCTAVE_DIRECTORY})
 
 ######################################THE SEARCH FOR PYTHON BEGINS####################################
 find_package(PythonLibs REQUIRED)
+message(STATUS ${PYTHON_INCLUDE_DIR})
 include_directories(
-  ${PYTHON_INCLUDE_DIR}
+  ${PYTHON_INCLUDE_DIR}/../../lib/python3.6/site-packages/numpy-1.13.0-py3.6-linux-x86_64.egg/numpy/core/include/numpy/
+  ${PYTHON_INCLUDE_DIR}/
   ${PYTHON_INCLUDE_DIR}/numpy/
   ${PYTHON_INCLUDE_DIR}/../lib/site-packages/numpy/core/include/numpy 
   ${PYTHON_INCLUDE_DIR}/../Lib/site-packages/numpy/core/include/numpy
@@ -72,9 +74,9 @@ include(CheckCXXCompilerFlag)
 CHECK_CXX_COMPILER_FLAG("-std=c++11" COMPILER_SUPPORTS_CXX11)
 CHECK_CXX_COMPILER_FLAG("-std=c++0x" COMPILER_SUPPORTS_CXX0X)
 if(COMPILER_SUPPORTS_CXX11)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -O2 -s -DNDEBUG")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -fPIC -O2 -s -DNDEBUG")
 elseif(COMPILER_SUPPORTS_CXX0X)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x -O2 -s -DNDEBUG")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x -O2 -fPIC -s -DNDEBUG")
 else()
         message(FATAL ERROR "THE COMPILER ${CMAKE_CXX_COMPILER} HAS NO C++11 SUPPORT!!!!! PLEASE USE A NEWER COMPILER TO USE THIS PROJECT!! THANK YOU")
 endif()

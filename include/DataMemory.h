@@ -8,6 +8,7 @@
 #include <fstream>
 #include <typeinfo>
 #include "DataSource.h"
+#include "VectorUtil.h"
 
 
 template<class Tp, class TpY>
