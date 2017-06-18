@@ -64,7 +64,7 @@ struct MomPars1d{
 		g0=0;
 		b0inc=0;	
 	}
-	void KeepOnly(std::vector<int> &sel){
+	void KeepOnly(std::vector<float> &sel){
 		::KeepOnly(grad,sel);
 		::KeepOnly(binc,sel);
 	}
@@ -116,11 +116,11 @@ struct MomPars2d{
 			binc[i].assign(b[i].size(),0);
 		}	
 	}
-	void KeepOnly(std::vector<int> &sel){
+	void KeepOnly(std::vector<float> &sel){
 		::KeepOnly(grad,sel);
 		::KeepOnly(binc,sel);
 	}
-	void KeepOnly(int i, std::vector<int> &sel){
+	void KeepOnly(int i, std::vector<float> &sel){
 		::KeepOnly(grad[i],sel);
 		::KeepOnly(binc[i],sel);
 	}
@@ -153,7 +153,7 @@ struct MomPars3d{
 			binc[i].assign(b[i].size(),0);
 		}	
 	}
-	void KeepOnly(std::vector<int> &sel){
+	void KeepOnly(std::vector<float> &sel){
 		::KeepOnly(grad,sel);
 		::KeepOnly(binc,sel);
 	}

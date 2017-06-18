@@ -1,0 +1,49 @@
+Performing C++ SOURCE FILE Test COMPILER_SUPPORTS_CXX0X failed with the following output:
+Change Dir: C:/Users/thelaughingman/Desktop/repos/FSA/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_a3ac3.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) Build Engine version 14.0.25420.1
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 6/18/2017 12:10:23 AM.
+The target "_ConvertPdbFiles" listed in a BeforeTargets attribute at "C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,37)" does not exist in the project, and will be ignored.
+The target "_CollectPdbFiles" listed in an AfterTargets attribute at "C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (34,70)" does not exist in the project, and will be ignored.
+The target "_CollectMdbFiles" listed in a BeforeTargets attribute at "C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,38)" does not exist in the project, and will be ignored.
+The target "_CopyMdbFiles" listed in an AfterTargets attribute at "C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets (41,71)" does not exist in the project, and will be ignored.
+Project "C:\Users\thelaughingman\Desktop\repos\FSA\bin\CMakeFiles\CMakeTmp\cmTC_a3ac3.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_a3ac3.dir\Debug\".
+  Creating directory "C:\Users\thelaughingman\Desktop\repos\FSA\bin\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_a3ac3.dir\Debug\cmTC_a3ac3.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_a3ac3.dir\Debug\cmTC_a3ac3.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D COMPILER_SUPPORTS_CXX0X /D _DEBUG /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_a3ac3.dir\Debug\\" /Fd"cmTC_a3ac3.dir\Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:queue  -std=c++0x C:\Users\thelaughingman\Desktop\repos\FSA\bin\CMakeFiles\CMakeTmp\src.cxx
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.00.24215.1 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D COMPILER_SUPPORTS_CXX0X /D _DEBUG /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_a3ac3.dir\Debug\\" /Fd"cmTC_a3ac3.dir\Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:queue  -std=c++0x C:\Users\thelaughingman\Desktop\repos\FSA\bin\CMakeFiles\CMakeTmp\src.cxx
+  
+cl : Command line warning D9002: ignoring unknown option '-std=c++0x' [C:\Users\thelaughingman\Desktop\repos\FSA\bin\CMakeFiles\CMakeTmp\cmTC_a3ac3.vcxproj]
+  src.cxx
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\thelaughingman\Desktop\repos\FSA\bin\CMakeFiles\CMakeTmp\Debug\cmTC_a3ac3.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/thelaughingman/Desktop/repos/FSA/bin/CMakeFiles/CMakeTmp/Debug/cmTC_a3ac3.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/thelaughingman/Desktop/repos/FSA/bin/CMakeFiles/CMakeTmp/Debug/cmTC_a3ac3.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_a3ac3.dir\Debug\src.obj
+  cmTC_a3ac3.vcxproj -> C:\Users\thelaughingman\Desktop\repos\FSA\bin\CMakeFiles\CMakeTmp\Debug\cmTC_a3ac3.exe
+FinalizeBuildStatus:
+  Deleting file "cmTC_a3ac3.dir\Debug\cmTC_a3ac3.tlog\unsuccessfulbuild".
+  Touching "cmTC_a3ac3.dir\Debug\cmTC_a3ac3.tlog\cmTC_a3ac3.lastbuildstate".
+Done Building Project "C:\Users\thelaughingman\Desktop\repos\FSA\bin\CMakeFiles\CMakeTmp\cmTC_a3ac3.vcxproj" (default targets).
+
+Build succeeded.
+
+"C:\Users\thelaughingman\Desktop\repos\FSA\bin\CMakeFiles\CMakeTmp\cmTC_a3ac3.vcxproj" (default target) (1) ->
+(ClCompile target) -> 
+  cl : Command line warning D9002: ignoring unknown option '-std=c++0x' [C:\Users\thelaughingman\Desktop\repos\FSA\bin\CMakeFiles\CMakeTmp\cmTC_a3ac3.vcxproj]
+
+    1 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.20
+
+Source file was:
+int main() { return 0; }

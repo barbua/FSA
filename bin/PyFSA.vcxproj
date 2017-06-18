@@ -1,0 +1,344 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{A6685C34-169D-3221-84DE-1B469A470994}</ProjectGUID>
+    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>PyFSA</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+    <PropertyGroup>
+      <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\thelaughingman\Desktop\repos\FSA\bin\Debug\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">PyFSA.dir\Debug\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">PyFSA32</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.pyd</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\thelaughingman\Desktop\repos\FSA\bin\Release\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">PyFSA.dir\Release\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">PyFSA32</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.pyd</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Users\thelaughingman\Desktop\repos\FSA\bin\MinSizeRel\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">PyFSA.dir\MinSizeRel\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">PyFSA32</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">.pyd</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">true</GenerateManifest>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Users\thelaughingman\Desktop\repos\FSA\bin\RelWithDebInfo\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">PyFSA.dir\RelWithDebInfo\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">PyFSA32</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.pyd</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</GenerateManifest>
+    </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalOptions> -s %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\numpy;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\..\lib\site-packages\numpy\core\include\numpy;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\..\Lib\site-packages\numpy\core\include\numpy;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\include;C:\Users\thelaughingman\Desktop\repos\FSA\..\include;C:\Users\thelaughingman\Desktop\repos\FSA\.\include;C:\Program Files\MATLAB\R2016b\extern\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <CppLanguageStandard>c++11</CppLanguageStandard>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_DEBUG;USE_MATH_DEFINES;USE_SCS;AB_USE_UNORDERED_MAP;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR="Debug";PyFSA_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_DEBUG;USE_MATH_DEFINES;USE_SCS;AB_USE_UNORDERED_MAP;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"Debug\";PyFSA_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\numpy;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\..\lib\site-packages\numpy\core\include\numpy;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\..\Lib\site-packages\numpy\core\include\numpy;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\include;C:\Users\thelaughingman\Desktop\repos\FSA\..\include;C:\Users\thelaughingman\Desktop\repos\FSA\.\include;C:\Program Files\MATLAB\R2016b\extern\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\numpy;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\..\lib\site-packages\numpy\core\include\numpy;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\..\Lib\site-packages\numpy\core\include\numpy;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\include;C:\Users\thelaughingman\Desktop\repos\FSA\..\include;C:\Users\thelaughingman\Desktop\repos\FSA\.\include;C:\Program Files\MATLAB\R2016b\extern\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36-32\libs\_tkinter.lib;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36-32\libs\python3.lib;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36-32\libs\python36.lib;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36-32\libs\python36_d.lib;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36-32\libs\python3_d.lib;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\libs\_tkinter.lib;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\libs\python3.lib;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\libs\python36.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>Debug</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/thelaughingman/Desktop/repos/FSA/bin/Debug/PyFSA.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/thelaughingman/Desktop/repos/FSA/bin/Debug/PyFSA.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions> -s %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\numpy;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\..\lib\site-packages\numpy\core\include\numpy;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\..\Lib\site-packages\numpy\core\include\numpy;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\include;C:\Users\thelaughingman\Desktop\repos\FSA\..\include;C:\Users\thelaughingman\Desktop\repos\FSA\.\include;C:\Program Files\MATLAB\R2016b\extern\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <CppLanguageStandard>c++11</CppLanguageStandard>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NDEBUG;USE_MATH_DEFINES;USE_SCS;AB_USE_UNORDERED_MAP;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR="Release";PyFSA_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat></DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NDEBUG;USE_MATH_DEFINES;USE_SCS;AB_USE_UNORDERED_MAP;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"Release\";PyFSA_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\numpy;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\..\lib\site-packages\numpy\core\include\numpy;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\..\Lib\site-packages\numpy\core\include\numpy;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\include;C:\Users\thelaughingman\Desktop\repos\FSA\..\include;C:\Users\thelaughingman\Desktop\repos\FSA\.\include;C:\Program Files\MATLAB\R2016b\extern\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\numpy;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\..\lib\site-packages\numpy\core\include\numpy;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\..\Lib\site-packages\numpy\core\include\numpy;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\include;C:\Users\thelaughingman\Desktop\repos\FSA\..\include;C:\Users\thelaughingman\Desktop\repos\FSA\.\include;C:\Program Files\MATLAB\R2016b\extern\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36-32\libs\_tkinter.lib;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36-32\libs\python3.lib;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36-32\libs\python36.lib;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36-32\libs\python36_d.lib;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36-32\libs\python3_d.lib;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\libs\_tkinter.lib;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\libs\python3.lib;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\libs\python36.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>No</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/thelaughingman/Desktop/repos/FSA/bin/Release/PyFSA.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/thelaughingman/Desktop/repos/FSA/bin/Release/PyFSA.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <ClCompile>
+      <AdditionalOptions> -s %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\numpy;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\..\lib\site-packages\numpy\core\include\numpy;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\..\Lib\site-packages\numpy\core\include\numpy;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\include;C:\Users\thelaughingman\Desktop\repos\FSA\..\include;C:\Users\thelaughingman\Desktop\repos\FSA\.\include;C:\Program Files\MATLAB\R2016b\extern\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <CppLanguageStandard>c++11</CppLanguageStandard>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NDEBUG;USE_MATH_DEFINES;USE_SCS;AB_USE_UNORDERED_MAP;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR="MinSizeRel";PyFSA_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat></DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NDEBUG;USE_MATH_DEFINES;USE_SCS;AB_USE_UNORDERED_MAP;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"MinSizeRel\";PyFSA_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\numpy;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\..\lib\site-packages\numpy\core\include\numpy;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\..\Lib\site-packages\numpy\core\include\numpy;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\include;C:\Users\thelaughingman\Desktop\repos\FSA\..\include;C:\Users\thelaughingman\Desktop\repos\FSA\.\include;C:\Program Files\MATLAB\R2016b\extern\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\numpy;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\..\lib\site-packages\numpy\core\include\numpy;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\..\Lib\site-packages\numpy\core\include\numpy;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\include;C:\Users\thelaughingman\Desktop\repos\FSA\..\include;C:\Users\thelaughingman\Desktop\repos\FSA\.\include;C:\Program Files\MATLAB\R2016b\extern\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36-32\libs\_tkinter.lib;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36-32\libs\python3.lib;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36-32\libs\python36.lib;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36-32\libs\python36_d.lib;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36-32\libs\python3_d.lib;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\libs\_tkinter.lib;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\libs\python3.lib;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\libs\python36.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>No</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/thelaughingman/Desktop/repos/FSA/bin/MinSizeRel/PyFSA.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/thelaughingman/Desktop/repos/FSA/bin/MinSizeRel/PyFSA.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <ClCompile>
+      <AdditionalOptions> -s %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\numpy;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\..\lib\site-packages\numpy\core\include\numpy;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\..\Lib\site-packages\numpy\core\include\numpy;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\include;C:\Users\thelaughingman\Desktop\repos\FSA\..\include;C:\Users\thelaughingman\Desktop\repos\FSA\.\include;C:\Program Files\MATLAB\R2016b\extern\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <CppLanguageStandard>c++11</CppLanguageStandard>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NDEBUG;USE_MATH_DEFINES;USE_SCS;AB_USE_UNORDERED_MAP;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR="RelWithDebInfo";PyFSA_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NDEBUG;USE_MATH_DEFINES;USE_SCS;AB_USE_UNORDERED_MAP;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"RelWithDebInfo\";PyFSA_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\numpy;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\..\lib\site-packages\numpy\core\include\numpy;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\..\Lib\site-packages\numpy\core\include\numpy;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\include;C:\Users\thelaughingman\Desktop\repos\FSA\..\include;C:\Users\thelaughingman\Desktop\repos\FSA\.\include;C:\Program Files\MATLAB\R2016b\extern\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\numpy;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\..\lib\site-packages\numpy\core\include\numpy;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\..\Lib\site-packages\numpy\core\include\numpy;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\include\include;C:\Users\thelaughingman\Desktop\repos\FSA\..\include;C:\Users\thelaughingman\Desktop\repos\FSA\.\include;C:\Program Files\MATLAB\R2016b\extern\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36-32\libs\_tkinter.lib;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36-32\libs\python3.lib;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36-32\libs\python36.lib;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36-32\libs\python36_d.lib;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36-32\libs\python3_d.lib;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\libs\_tkinter.lib;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\libs\python3.lib;C:\Users\thelaughingman\AppData\Local\Programs\Python\Python36\libs\python36.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>Debug</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/thelaughingman/Desktop/repos/FSA/bin/RelWithDebInfo/PyFSA.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/thelaughingman/Desktop/repos/FSA/bin/RelWithDebInfo/PyFSA.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\thelaughingman\Desktop\repos\FSA\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/Users/thelaughingman/Desktop/repos/FSA/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/thelaughingman/Desktop/repos/FSA -BC:/Users/thelaughingman/Desktop/repos/FSA/bin --check-stamp-file C:\Users\thelaughingman\Desktop\repos\FSA\bin\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/Users/thelaughingman/Desktop/repos/FSA/CMakeLists.txt;C:\Users\thelaughingman\Desktop\repos\FSA\CMakeLists.txt;C:\Users\thelaughingman\Desktop\repos\FSA\bin\CMakeFiles\3.7.2\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeSystemSpecificInitialize.cmake;C:\Users\thelaughingman\Desktop\repos\FSA\bin\CMakeFiles\3.7.2\CMakeCCompiler.cmake;C:\Users\thelaughingman\Desktop\repos\FSA\bin\CMakeFiles\3.7.2\CMakeCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC.cmake;C:\Users\thelaughingman\Desktop\repos\FSA\bin\CMakeFiles\3.7.2\CMakeRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\FindPythonLibs.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeFindFrameworks.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\SelectLibraryConfigurations.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CheckCXXCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;C:\Users\thelaughingman\Desktop\repos\FSA\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\thelaughingman\Desktop\repos\FSA\bin\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/Users/thelaughingman/Desktop/repos/FSA/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/thelaughingman/Desktop/repos/FSA -BC:/Users/thelaughingman/Desktop/repos/FSA/bin --check-stamp-file C:\Users\thelaughingman\Desktop\repos\FSA\bin\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/Users/thelaughingman/Desktop/repos/FSA/CMakeLists.txt;C:\Users\thelaughingman\Desktop\repos\FSA\CMakeLists.txt;C:\Users\thelaughingman\Desktop\repos\FSA\bin\CMakeFiles\3.7.2\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeSystemSpecificInitialize.cmake;C:\Users\thelaughingman\Desktop\repos\FSA\bin\CMakeFiles\3.7.2\CMakeCCompiler.cmake;C:\Users\thelaughingman\Desktop\repos\FSA\bin\CMakeFiles\3.7.2\CMakeCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC.cmake;C:\Users\thelaughingman\Desktop\repos\FSA\bin\CMakeFiles\3.7.2\CMakeRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\FindPythonLibs.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeFindFrameworks.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\SelectLibraryConfigurations.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CheckCXXCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;C:\Users\thelaughingman\Desktop\repos\FSA\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\thelaughingman\Desktop\repos\FSA\bin\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule C:/Users/thelaughingman/Desktop/repos/FSA/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/thelaughingman/Desktop/repos/FSA -BC:/Users/thelaughingman/Desktop/repos/FSA/bin --check-stamp-file C:\Users\thelaughingman\Desktop\repos\FSA\bin\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:/Users/thelaughingman/Desktop/repos/FSA/CMakeLists.txt;C:\Users\thelaughingman\Desktop\repos\FSA\CMakeLists.txt;C:\Users\thelaughingman\Desktop\repos\FSA\bin\CMakeFiles\3.7.2\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeSystemSpecificInitialize.cmake;C:\Users\thelaughingman\Desktop\repos\FSA\bin\CMakeFiles\3.7.2\CMakeCCompiler.cmake;C:\Users\thelaughingman\Desktop\repos\FSA\bin\CMakeFiles\3.7.2\CMakeCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC.cmake;C:\Users\thelaughingman\Desktop\repos\FSA\bin\CMakeFiles\3.7.2\CMakeRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\FindPythonLibs.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeFindFrameworks.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\SelectLibraryConfigurations.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CheckCXXCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;C:\Users\thelaughingman\Desktop\repos\FSA\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Users\thelaughingman\Desktop\repos\FSA\bin\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule C:/Users/thelaughingman/Desktop/repos/FSA/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/thelaughingman/Desktop/repos/FSA -BC:/Users/thelaughingman/Desktop/repos/FSA/bin --check-stamp-file C:\Users\thelaughingman\Desktop\repos\FSA\bin\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/Users/thelaughingman/Desktop/repos/FSA/CMakeLists.txt;C:\Users\thelaughingman\Desktop\repos\FSA\CMakeLists.txt;C:\Users\thelaughingman\Desktop\repos\FSA\bin\CMakeFiles\3.7.2\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeSystemSpecificInitialize.cmake;C:\Users\thelaughingman\Desktop\repos\FSA\bin\CMakeFiles\3.7.2\CMakeCCompiler.cmake;C:\Users\thelaughingman\Desktop\repos\FSA\bin\CMakeFiles\3.7.2\CMakeCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC.cmake;C:\Users\thelaughingman\Desktop\repos\FSA\bin\CMakeFiles\3.7.2\CMakeRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\FindPythonLibs.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeFindFrameworks.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\SelectLibraryConfigurations.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CheckCXXCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;C:\Users\thelaughingman\Desktop\repos\FSA\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Users\thelaughingman\Desktop\repos\FSA\bin\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\thelaughingman\Desktop\repos\FSA\include\DataMemory.h" />
+    <ClInclude Include="C:\Users\thelaughingman\Desktop\repos\FSA\include\DataSource.h" />
+    <ClInclude Include="C:\Users\thelaughingman\Desktop\repos\FSA\include\Fsa.h" />
+    <ClInclude Include="C:\Users\thelaughingman\Desktop\repos\FSA\include\FsaSchedule.h" />
+    <ClInclude Include="C:\Users\thelaughingman\Desktop\repos\FSA\include\LossFunctions.h" />
+    <ClInclude Include="C:\Users\thelaughingman\Desktop\repos\FSA\include\MomPars.h" />
+    <ClInclude Include="C:\Users\thelaughingman\Desktop\repos\FSA\include\PyFSA.h" />
+    <ClInclude Include="C:\Users\thelaughingman\Desktop\repos\FSA\include\VectorUtil.h" />
+    <ClCompile Include="C:\Users\thelaughingman\Desktop\repos\FSA\src\DataMemory.cpp"  />
+    <ClCompile Include="C:\Users\thelaughingman\Desktop\repos\FSA\src\PyFSA.cpp"  />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:/Users/thelaughingman/Desktop/repos/FSA/bin/ZERO_CHECK.vcxproj">
+      <Project>F6FEE682-24D9-39A5-9F2F-4BF033046F54</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

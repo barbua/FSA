@@ -1,0 +1,18 @@
+﻿  Checking Build System
+  CMake is re-running because C:/Users/thelaughingman/Desktop/repos/FSA/bin/CMakeFiles/generate.stamp is out-of-date.
+    the file 'C:/Users/thelaughingman/Desktop/repos/FSA/CMakeLists.txt'
+    is newer than 'C:/Users/thelaughingman/Desktop/repos/FSA/bin/CMakeFiles/generate.stamp.depend'
+    result='-1'
+  -- C:/Program Files/MATLAB/R2016b/extern/include/mex.h
+  -- C:/Program Files/MATLAB/R2016b/extern/include/
+  CMake Warning at CMakeLists.txt:49 (MESSAGE):
+    YOUR BINARIES OR THE GENERATED PYD/SO FILE WILL BE IN A FOLDER CALLED DEBUG
+    IN THE DIRECTORY YOU RAN THE CMAKE COMMAND IN
+  
+  
+  -- PYTHON LIBRARY LINKING FROM: 
+  -- C:/Users/thelaughingman/AppData/Local/Programs/Python/Python36-32/libs/_tkinter.libC:/Users/thelaughingman/AppData/Local/Programs/Python/Python36-32/libs/python3.libC:/Users/thelaughingman/AppData/Local/Programs/Python/Python36-32/libs/python36.libC:/Users/thelaughingman/AppData/Local/Programs/Python/Python36-32/libs/python36_d.libC:/Users/thelaughingman/AppData/Local/Programs/Python/Python36-32/libs/python3_d.libC:/Users/thelaughingman/AppData/Local/Programs/Python/Python36/libs/_tkinter.libC:/Users/thelaughingman/AppData/Local/Programs/Python/Python36/libs/python3.libC:/Users/thelaughingman/AppData/Local/Programs/Python/Python36/libs/python36.lib
+  -- C:/Users/thelaughingman/AppData/Local/Programs/Python/Python36-32/libs/_tkinter.libC:/Users/thelaughingman/AppData/Local/Programs/Python/Python36-32/libs/python3.libC:/Users/thelaughingman/AppData/Local/Programs/Python/Python36-32/libs/python36.libC:/Users/thelaughingman/AppData/Local/Programs/Python/Python36-32/libs/python36_d.libC:/Users/thelaughingman/AppData/Local/Programs/Python/Python36-32/libs/python3_d.libC:/Users/thelaughingman/AppData/Local/Programs/Python/Python36/libs/_tkinter.libC:/Users/thelaughingman/AppData/Local/Programs/Python/Python36/libs/python3.libC:/Users/thelaughingman/AppData/Local/Programs/Python/Python36/libs/python36.lib
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: C:/Users/thelaughingman/Desktop/repos/FSA/bin

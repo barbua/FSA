@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\thelaughingman\Desktop\repos\FSA\src\DataMemory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\thelaughingman\Desktop\repos\FSA\src\PyFSA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\thelaughingman\Desktop\repos\FSA\include\DataMemory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\thelaughingman\Desktop\repos\FSA\include\DataSource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\thelaughingman\Desktop\repos\FSA\include\Fsa.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\thelaughingman\Desktop\repos\FSA\include\FsaSchedule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\thelaughingman\Desktop\repos\FSA\include\LossFunctions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\thelaughingman\Desktop\repos\FSA\include\MomPars.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\thelaughingman\Desktop\repos\FSA\include\PyFSA.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\thelaughingman\Desktop\repos\FSA\include\VectorUtil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\thelaughingman\Desktop\repos\FSA\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{1AE3413F-346A-3DF0-A448-7D31B25ED2EA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{17A8A6DB-611C-34F5-B4E5-FD9E11D3316D}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

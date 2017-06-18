@@ -13,7 +13,8 @@
 
 char fnGlobalLogfile[261] = "printf.txt";
 
-void PrintOut(const char * format, ...){
+/*
+void printOut(const char * format, ...){
 	FILE *pfile;
 	pfile = fopen(fnGlobalLogfile, "at");
 	if (pfile != NULL){
@@ -24,10 +25,11 @@ void PrintOut(const char * format, ...){
 		fclose(pfile);
 	}
 }
+*/
 
 // Train a FSA classifier with a certain kind of loss function.
 template<class LossFunction, class Tp, class TpVecX>
-float TrainLinFsa(std::vector<Tp> &b, Tp &b0, std::vector<int> &selected, DataSource<TpVecX,float> &data, int N, 
+float TrainLinFsa(std::vector<Tp> &b, Tp &b0, std::vector<float> &selected, DataSource<TpVecX,float> &data, int N, 
 		int kStar, Tp percExp, int nExp, Tp mu, int nEpochs, Tp eta, int minibatchsize, float mom, Tp ridge, int verbosity, int nEpNoSel=10, int useSelected=0){
 	// Generic linear FSA
 	// N: Number of observations
@@ -49,18 +51,18 @@ float TrainLinFsa(std::vector<Tp> &b, Tp &b0, std::vector<int> &selected, DataSo
 	MomPars1d<float> pars(minibatchsize,mom);
 	std::map<int,int> selidx;
 
-	time_t timeStart,timeEnd;
-	time( &timeStart );
+	////time_t //timeStart,//timeEnd;
+	////time( &//timeStart );
 	if (verbosity>0){
-		printf("\nTraining FSA %s, npos=%d,nneg=%d,nVar=%d,k=%d,nEpochs=%d, eta=%g,mom=%g, par=%g\n",LossFunction::name().c_str(),npos,nneg,M,kStar,nEpochs,eta,mom,ridge);
-		printf("Training starts at %s", ctime(&timeStart) );
-		PrintOut("\nTraining %s, npos=%d,nneg=%d,nVar=%d,k=%d,nEpochs=%d, eta=%g,mom=%g, par=%g\n",LossFunction::name().c_str(),npos,nneg,M,kStar,nEpochs,eta,mom,ridge);
-		PrintOut("Training starts at %s", ctime(&timeStart) );
+		//printf("\nTraining FSA %s, npos=%d,nneg=%d,nVar=%d,k=%d,nEpochs=%d, eta=%g,mom=%g, par=%g\n",LossFunction::name().c_str(),npos,nneg,M,kStar,nEpochs,eta,mom,ridge);
+		//printf("Training starts at %s", c//time(&//timeStart) );
+		//printOut("\nTraining %s, npos=%d,nneg=%d,nVar=%d,k=%d,nEpochs=%d, eta=%g,mom=%g, par=%g\n",LossFunction::name().c_str(),npos,nneg,M,kStar,nEpochs,eta,mom,ridge);
+		//printOut("Training starts at %s", c//time(&//timeStart) );
 	}
 	b0=0;
 	if (selected.empty()){
 		selected.resize(M);
-		for (int i=0;i<M;i++)
+		for (double i=0;i<M;i++)
 			selected[i]=i;
 	}
 	M=(int)selected.size();
@@ -102,7 +104,7 @@ float TrainLinFsa(std::vector<Tp> &b, Tp &b0, std::vector<int> &selected, DataSo
 		M=(int)b.size();
 		int ns=GetFsaScheduleE(e+1,percExp,nExp,(int)(nEpochs*0.7),kStar,M0,mu);
 		if (M>ns){
-			std::vector<int> lnz,tmp;
+			std::vector<float> lnz,tmp;
 			sumSq.resize(M);
 			for (int i=0;i<M;i++)
 				sumSq[i]=fabs(b[i]);
@@ -113,7 +115,7 @@ float TrainLinFsa(std::vector<Tp> &b, Tp &b0, std::vector<int> &selected, DataSo
 			for (int i=0;i<(int)lnz.size();i++)
 				tmp.push_back(selected[lnz[i]]);
 			selected=tmp;
-			KeepOnly(b,lnz);
+			data.KeepOnly(b);
 			if (useSelected){
 				data.KeepOnly(selected);
 				selidx.clear();
@@ -126,7 +128,7 @@ float TrainLinFsa(std::vector<Tp> &b, Tp &b0, std::vector<int> &selected, DataSo
 		if (verbosity>0)
 			printf("Loss=%1.3f, err=%1.2f, nsv=%d, %1.1f, ns=%d,%d\n",loss,err, nsv,nsv/(float)N*100.f,ns,(int)selected.size());
 		if (verbosity>1||(verbosity==1&&e%10==0)){
-			PrintOut("%d\t%1.3f\t%1.2f\t%d\t%1.1f\t%d\n",e, loss,err,nsv,nsv/(float)N*100.f,ns);
+			//printOut("%d\t%1.3f\t%1.2f\t%d\t%1.1f\t%d\n",e, loss,err,nsv,nsv/(float)N*100.f,ns);
 		}
 	}
 	loss=SumLoss<LossFunction>(xb,y);
@@ -140,12 +142,12 @@ float TrainLinFsa(std::vector<Tp> &b, Tp &b0, std::vector<int> &selected, DataSo
 		Log2File("c:/tmp/detfp.txt",fp);
 		double auc=AUC(det,fp);
 		printf("Loss=%1.3f, det=%1.2f, fp=%1.3f, AUC=%1.3f\n",loss, detr*100,fpr*100,auc);
-		PrintOut("\nLoss=%1.3f, det=%1.2f, fp=%1.3f, AUC=%1.3f\n",loss,detr*100,fpr*100,auc);
+		//printOut("\nLoss=%1.3f, det=%1.2f, fp=%1.3f, AUC=%1.3f\n",loss,detr*100,fpr*100,auc);
 	#endif
-	time( &timeEnd);
+	//time( &//timeEnd);
 	if (verbosity>0){
-		printf("Training ends at %s, duration %g\n", ctime(&timeEnd), difftime(timeEnd, timeStart));
-		PrintOut("Training ends at %s, duration %g\n", ctime(&timeEnd), difftime(timeEnd, timeStart));
+		//printf("Training ends at %s, duration %g\n", c//time(&//timeEnd), diff//time(//timeEnd, //timeStart));
+		//printOut("Training ends at %s, duration %g\n", c//time(&//timeEnd), diff//time(//timeEnd, //timeStart));
 	}
 	return loss;
 }

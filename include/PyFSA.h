@@ -1,6 +1,7 @@
 #ifndef PYFSA_H
 #define	PYFSA_H
 
+#include "DataMemory.h"
 
 #ifdef _DEBUG
 #undef _DEBUG
@@ -20,15 +21,21 @@
 #include <vector>
 
 #include "Fsa.h"
-#include "DataMemory.h"
-
 
 #define _QUOTEME(x) #x
 #define QUOTEME(x) _QUOTEME(x)
 
 extern "C" void INITNAME();
 
-PyObject* TrainLinFSA(PyObject *self, PyObject *args);
+extern "C" PyObject* TrainLinFSA(PyObject *self, PyObject *args);
 
 #endif	/* PYCONVNET3_CUH */
 
+#if PY_VERSION_HEX >= 0x03000000
+#define PYINT_OR_PYLONG_OBJ_CODE PyLongObject *fo = (PyLongObject*)PyList_GET_ITEM(pyList, i);
+#define PYLONG_OR_PYINT_CONVERSION_CODE PyObject* f = PyLong_FromLong((long)sel[i]);
+
+#else
+#define PYINT_OR_PYLONG_OBJ_CODE PyIntObject *fo = (PyIntObject*)PyList_GET_ITEM(pyList, i);
+#define PYLONG_OR_PYINT_CONVERSION_CODE PyObject* f = PyInt_FromLong((long)sel[i]);
+#endif
