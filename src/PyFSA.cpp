@@ -57,7 +57,7 @@ bool GetVector(std::vector<int> &v, const PyObject* pyList) {
 	int n=(int)PyList_GET_SIZE(pyList);
     for (int i = 0; i < n; i++) {
 		PYINT_OR_PYLONG_OBJ_CODE
-		int d=fo->ob_digit[1];
+		PYACCESSVALUE
 		//printf("%d ", d);
         v.push_back(d);
     }
