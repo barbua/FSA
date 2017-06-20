@@ -16,6 +16,7 @@ using namespace std;
 	Py_Initialize();\
 	return PyModule_Create(&TrainLinFSA_py_module);\
 }
+#define PYACCESSVALUE int d=fo->ob_digit[1];
 
 #else //If Python is an earlier version than 3.0
 #define PYMETHODTABLE static PyMethodDef myextension_methods[] = {  { "TrainLinFSA", TrainLinFSA_py, METH_VARARGS }, \
@@ -31,6 +32,7 @@ import_array();}
 	(void)Py_InitModule("TrainLinFSA_py", myextension_methods);\
 	import_array();\
 }
+#define PYACCESSVALUE int d=fo->ob_ival;
 #endif
 #endif
 
