@@ -1,2 +1,7 @@
 image:
 - Visual Studio 2015
+
+before_build:
+-mkdir bin
+-cd bin
+-cmake ../
