@@ -6,6 +6,7 @@ before_install:
 - sudo apt-get install make
 
 script:
+- mkdir bin
 - cd bin/
 - cmake ../
 - make
