@@ -4,4 +4,4 @@ image:
 before_build:
 -mkdir bin
 -cd bin
--cmake ../
+-cmake ..\
