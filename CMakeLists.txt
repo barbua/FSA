@@ -6,7 +6,7 @@ enable_language(CXX)
 enable_language(C)
 
 #####################################FIND OCTAVE OR MATLAB TO PRODUCE MEX SAMPLE CODE################################################
-if(UNIX)
+#[[if(UNIX)
   file(GLOB_RECURSE OCTAVE_OR_MATLAB_FULL_FILE_PATH "/usr/include/octave*/octave/mex.h")
 elseif(WIN32 OR WIN64)
   file(GLOB_RECURSE OCTAVE_OR_MATLAB_FULL_FILE_PATH 
@@ -30,6 +30,7 @@ string(FIND ${OCTAVE_OR_MATLAB_FULL_FILE_PATH} "mex.h" INDEX)
 string(SUBSTRING ${OCTAVE_OR_MATLAB_FULL_FILE_PATH} 0 ${INDEX} OCTAVE_DIRECTORY)
 
 message(STATUS ${OCTAVE_DIRECTORY})
+]]
 ##############################################################################################################################
 
 ######################################THE SEARCH FOR PYTHON BEGINS####################################
