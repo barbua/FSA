@@ -2,10 +2,12 @@ before_install:
 - sudo apt-get install octave
 - sudo apt-get install python
 - sudo apt-get install python-dev
+- sudo apt-get install make
 
 script:
 - cd bin/
 - cmake ../
+- make
 
 language:
 - c++
