@@ -5,32 +5,7 @@ PROJECT(PyFSA)
 enable_language(CXX)
 enable_language(C)
 
-#####################################FIND OCTAVE OR MATLAB TO PRODUCE MEX SAMPLE CODE################################################
-#[[if(UNIX)
-  file(GLOB_RECURSE OCTAVE_OR_MATLAB_FULL_FILE_PATH "/usr/include/octave*/octave/mex.h")
-elseif(WIN32 OR WIN64)
-  file(GLOB_RECURSE OCTAVE_OR_MATLAB_FULL_FILE_PATH 
-  "C:/Program Files*/MATLAB/*/extern/include/mex.h")
-  if(NOT OCTAVE_OR_MATLAB_FULL_FILE_PATH)
-  file(GLOB_RECURSE OCTAVE_OR_MATLAB_FULL_FILE_PATH
-  "C:/Octave*/Octave*/include/octave*/octave/mex.h")
-  endif(NOT OCTAVE_OR_MATLAB_FULL_FILE_PATH)
-  ##################################IF WE DON'T FIND OCTAVE OR MATLAB FATAL ERROR#####################################################
-  if(NOT OCTAVE_OR_MATLAB_FULL_FILE_PATH)
-    message(FATAL_ERROR "ERROR!!! ERROR!!! OCTAVE OR MATLAB NOT FOUND PLEASE DOWNLOAD AND PLACE THESE IN DEFAULT LOCATIONS THEN RERUN THIS CMAKELIST")
-  endif(NOT OCTAVE_OR_MATLAB_FULL_FILE_PATH)
-endif(UNIX)
 
-######################################PRINTS PATH OF OCTAVE############################################################
-message(STATUS ${OCTAVE_OR_MATLAB_FULL_FILE_PATH})
-
-######################################THIS REMOVES MEX.H FROM PATH SO THAT WE CAN INCLUDE THE DIRECTORY##########################
-string(FIND ${OCTAVE_OR_MATLAB_FULL_FILE_PATH} "mex.h" INDEX)
-
-string(SUBSTRING ${OCTAVE_OR_MATLAB_FULL_FILE_PATH} 0 ${INDEX} OCTAVE_DIRECTORY)
-
-message(STATUS ${OCTAVE_DIRECTORY})
-]]
 ##############################################################################################################################
 
 ######################################THE SEARCH FOR PYTHON BEGINS####################################
@@ -45,7 +20,6 @@ include_directories(
   ${PYTHON_INCLUDE_DIR}/include/
   ../include
   ./include
-  ${OCTAVE_DIRECTORY}
   )
 
 if(WIN32 OR WIN64)
