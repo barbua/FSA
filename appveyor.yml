@@ -4,4 +4,5 @@ image:
 before_build:
 - mkdir bin
 - cd bin
+- pip install numpy
 - cmake ..\
