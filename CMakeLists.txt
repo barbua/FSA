@@ -9,9 +9,20 @@ enable_language(C)
 ##############################################################################################################################
 
 ######################################THE SEARCH FOR PYTHON BEGINS####################################
-find_package(PythonLibs REQUIRED)
-
-if(WIN32 OR WIN64)
+find_package(PythonLibs REQUIRED
+message(STATUS ${PYTHON_INCLUDE_DIR})
+include_directories(
+  ${PYTHON_INCLUDE_DIR}/../../lib/python3.6/site-packages/numpy-1.13.0-py3.6-linux-x86_64.egg/numpy/core/include/numpy/
+  ${PYTHON_INCLUDE_DIR}/
+  ${PYTHON_INCLUDE_DIR}/numpy/
+  ${PYTHON_INCLUDE_DIR}/../lib/site-packages/numpy/core/include/numpy 
+  ${PYTHON_INCLUDE_DIR}/../Lib/site-packages/numpy/core/include/numpy
+  ${PYTHON_INCLUDE_DIR}/include/
+  ../include
+  ./include
+  )
+  
+  if(WIN32 OR WIN64)
 MESSAGE(WARNING "YOUR BINARIES OR THE GENERATED PYD/SO FILE WILL BE IN A FOLDER CALLED DEBUG IN THE DIRECTORY YOU RAN THE CMAKE COMMAND IN")
 file(GLOB_RECURSE PYTHON_LIBRARIES "C:/Users/*/AppData/Local/Programs/Python/Python*/libs/*.lib")
 file(GLOB_RECURSE PYTHON_NUMPY_INCLUDE "C:/Users/*AppData/Local/Porgrams/Python/Python*/Lib/site-packages/*/numpy/core/include/numpy/arrayobject.h")
@@ -37,18 +48,6 @@ endif(WIN32 OR WIN64)
 message(STATUS ${PYTHON_LIBRARIES})
 
 message(STATUS ${PYTHON_NUMPY_INCLUDE})
-
-message(STATUS ${PYTHON_INCLUDE_DIR})
-include_directories(
-  ${PYTHON_INCLUDE_DIR}/../../lib/python3.6/site-packages/numpy-1.13.0-py3.6-linux-x86_64.egg/numpy/core/include/numpy/
-  ${PYTHON_INCLUDE_DIR}/
-  ${PYTHON_INCLUDE_DIR}/numpy/
-  ${PYTHON_INCLUDE_DIR}/../lib/site-packages/numpy/core/include/numpy 
-  ${PYTHON_INCLUDE_DIR}/../Lib/site-packages/numpy/core/include/numpy
-  ${PYTHON_INCLUDE_DIR}/include/
-  ../include
-  ./include
-  )
 
 ######################################CHECKS FOR C++11 SUPPORT, IF SUPPORT IS NOT PRESENT THIS CODE WILL STOP FURTHER PROCESSING############################
 include(CheckCXXCompilerFlag)
