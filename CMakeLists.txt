@@ -9,8 +9,9 @@ enable_language(C)
 ##############################################################################################################################
 
 ######################################THE SEARCH FOR PYTHON BEGINS####################################
-find_package(PythonLibs REQUIRED
+find_package(PythonLibs REQUIRED)
 message(STATUS ${PYTHON_INCLUDE_DIR})
+file(GLOB_RECURSE PYTHON_NUMPY_INCLUDE "C:/Python*/Lib/site-packages/*/numpy/core/include/numpy/arrayobject.h")
 include_directories(
   ${PYTHON_INCLUDE_DIR}/../../lib/python3.6/site-packages/numpy-1.13.0-py3.6-linux-x86_64.egg/numpy/core/include/numpy/
   ${PYTHON_INCLUDE_DIR}/
@@ -33,12 +34,10 @@ if(WIN32 OR WIN64)
 if(result)
   message(STATUS "TRYING TO FIND PYTHON SOMEWHERE ELSE")
   file(GLOB_RECURSE PYTHON_LIBRARIES "C:/Python*/libs/*.lib")
-  file(GLOB_RECURSE PYTHON_NUMPY_INCLUDE "C:/Python*/Lib/site-packages/*/numpy/core/include/numpy/arrayobject.h")
-  string(COMPARE EQUAL "${PYTHON_NUMPY_INCLUDE}" "" result3)
   string(COMPARE EQUAL "${PYTHON_LIBRARIES}" "" result2)
-  if(result2 OR result3)
+  if(result2)
   message(FATAL ERROR "PYTHON LIBRARY AND NUMPY NOT FOUND IN DEFAULT LOCATIONS, PLEASE INSTALL IT AND ENSURE IT IS IN C:/Pythonxx OR C:/Users/<your username without anglebrackets>/AppData/Programs/...")
-  endif(result2 OR result3)
+  endif(result2)
 else()
   message(STATUS "PYTHON LIBRARY LINKING FROM: ")
   message(STATUS ${PYTHON_LIBRARIES})
