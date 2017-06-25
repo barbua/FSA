@@ -12,7 +12,7 @@ enable_language(C)
 find_package(PythonLibs REQUIRED)
 message(STATUS ${PYTHON_INCLUDE_DIR})
 file(GLOB_RECURSE PYTHON_NUMPY_INCLUDE "C:/Python*/Lib/site-packages/*/numpy/core/include/numpy/arrayobject.h")
-string(FIND ${PYTHON_NUMPY_INCLUDE} '/arrayobject.h' PYTHONINDEX)
+string(FIND ${PYTHON_NUMPY_INCLUDE} "/arrayobject.h" PYTHONINDEX)
 string(SUBSTRING ${PYTHON_NUMPY_INCLUDE} 0 ${PYTHONINDEX} PYTHON_NUMPY_INCLUDE_DIR)
 message(STATUS ${PYTHON_NUMPY_INCLUDE_DIR})
 include_directories(
