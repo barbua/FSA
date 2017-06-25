@@ -8,8 +8,4 @@ install:
 - cmd: dir
 
 before_build:
-- cd numpy-1.11.2
-- python3 setup.py install
-- cd ..\
-- mkdir bin
-- cmake ..\
+- cmake .\
