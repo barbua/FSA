@@ -12,5 +12,4 @@ before_build:
 - python setup.py install
 - cd ..\
 - mkdir bin
-- cd bin
-- cmake ..\
+- cd C:\Python36-x64\include\..\..\lib\python3.6\site-packages\numpy-1.13.0-py3.6-linux-x86_64.egg\numpy\core\include\numpy
