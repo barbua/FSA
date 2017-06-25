@@ -2,6 +2,6 @@ image:
 - Visual Studio 2015
 
 before_build:
-- cd C:\Python36-x64\include
+- cd C:\Python36-x64\
 - dir
 - cmake .\
