@@ -3,6 +3,8 @@ image:
 
 install:
 - ps: (new-object net.webclient).DownloadFile('https://downloads.sourceforge.net/project/numpy/NumPy/1.11.2/numpy-1.11.2.zip?r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Fnumpy%2Ffiles%2FNumPy%2F1.11.2%2F&ts=1498362653&use_mirror=phoenixnap', 'numpy.zip')
+- cmd: cd ../
+- cmd: dir
 - cmd: dir
 - ps: Expand-Archive -Path ./numpy.zip -DestinationPath ./
 
