@@ -3,5 +3,7 @@ image:
 
 before_build:
 - cd C:\Python36-x64\
+- cd Lib
+- cd site-packages
 - dir
 - cmake .\
