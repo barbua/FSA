@@ -12,3 +12,4 @@ before_build:
 - python setup.py install
 - cd ..\
 - mkdir bin
+- cmake ..\
