@@ -11,13 +11,7 @@ enable_language(C)
 ######################################THE SEARCH FOR PYTHON BEGINS####################################
 find_package(PythonLibs REQUIRED)
 message(STATUS ${PYTHON_INCLUDE_DIR})
-string(CONCAT PYTHON_NUMPY_LIB "${PYTHON_INCLUDE_DIR}" "/../Lib/site-packages")
-MESSAGE(STATUS ${PYTHON_NUMPY_LIB})
-MESSAGE(STATUS "NUMPY NOT FOUND TRYING OTHER LOCATION")
-MESSAGE(FATAL ERROR ${PYTHON_INCLUDE_DIR})
-#string(FIND ${PYTHON_NUMPY_INCLUDE} "/arrayobject.h" PYTHONINDEX)
-#string(SUBSTRING ${PYTHON_NUMPY_INCLUDE} 0 ${PYTHONINDEX} PYTHON_NUMPY_INCLUDE_DIR)
-message(STATUS ${PYTHON_NUMPY_INCLUDE_DIR})
+
 include_directories(
   ${PYTHON_NUMPY_INCLUDE_DIR}
   ${PYTHON_INCLUDE_DIR}/../../lib/python3.6/site-packages/numpy-1.13.0-py3.6-linux-x86_64.egg/numpy/core/include/numpy/
