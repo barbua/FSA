@@ -37,16 +37,16 @@ Unzip this file however you can and navigate into the unzipped folder named FSA.
 Otherwise, if you have cloned the repository using git clone https://github.com/barbua/FSA.git
 you can go right into the FSA folder. 
 
-The folder hierarchy should look like this when you enter FSA
--FSA                            (folder)\n
-    -bin                        (folder)\n
-    -include                    (folder)\n
-    -src                        (folder)\n
-    -cmake                      (folder)\n
-    CMakeLists.txt              (file)\n
-    .\n
-    .(additional files)\n
-    
+The folder hierarchy should look like this when you enter FSA                                                                 
+-FSA                            (folder)                                                                                     
+    -bin                        (folder)                                                                                     
+    -include                    (folder)                                                                                     
+    -src                        (folder)                                                                                     
+    -cmake                      (folder)                                                                                     
+    CMakeLists.txt              (file)                                                                                       
+    .                                                                                                                         
+    .(additional files)                                                                                                       
+                                                                                                                              
  # WINDOWS
  
  Enter the bin folder in your FSA folder
