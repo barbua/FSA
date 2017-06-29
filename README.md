@@ -38,14 +38,14 @@ Otherwise, if you have cloned the repository using git clone https://github.com/
 you can go right into the FSA folder. 
 
 The folder hierarchy should look like this when you enter FSA
--FSA                            (folder)
-    -bin                        (folder)
-    -include                    (folder)
-    -src                        (folder)
-    -cmake                      (folder)
-    CMakeLists.txt              (file)
-    .
-    .(additional files)
+-FSA                            (folder)\n
+    -bin                        (folder)\n
+    -include                    (folder)\n
+    -src                        (folder)\n
+    -cmake                      (folder)\n
+    CMakeLists.txt              (file)\n
+    .\n
+    .(additional files)\n
     
  # WINDOWS
  
