@@ -1,37 +1,28 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
 
-PROJECT(PyFSA)
-
-enable_language(CXX)
-enable_language(C)
+PROJECT(PyFSA CXX C)
 
 
-##############################################################################################################################
-
-######################################THE SEARCH FOR PYTHON BEGINS####################################
 find_package(PythonLibs REQUIRED)
 message(STATUS ${PYTHON_INCLUDE_DIR})
 
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+
 include_directories(
-  ${PYTHON_NUMPY_INCLUDE_DIR}
-  ${PYTHON_INCLUDE_DIR}/../../lib/python3.6/site-packages/numpy-1.13.0-py3.6-linux-x86_64.egg/numpy/core/include/numpy/
-  ${PYTHON_INCLUDE_DIR}/
-  ${PYTHON_INCLUDE_DIR}/numpy/
+  ${PYTHON_INCLUDE_DIR}
   ${PYTHON_INCLUDE_DIR}/../lib/site-packages/numpy/core/include/numpy 
   ${PYTHON_INCLUDE_DIR}/../Lib/site-packages/numpy/core/include/numpy
-  ${PYTHON_INCLUDE_DIR}/include/
-  ../include
+  ${PYTHON_INCLUDE_DIR}/include
   ./include
   )
   
-  if(WIN32 OR WIN64)
+if(${CMAKE_SYSTEM_NAME} STREQUAL "Windows")
 MESSAGE(WARNING "YOUR BINARIES OR THE GENERATED PYD/SO FILE WILL BE IN A FOLDER CALLED DEBUG IN THE DIRECTORY YOU RAN THE CMAKE COMMAND IN")
 file(GLOB_RECURSE PYTHON_LIBRARIES "C:/Users/*/AppData/Local/Programs/Python/Python*/libs/*.lib")
-file(GLOB_RECURSE PYTHON_NUMPY_INCLUDE "C:/Users/*AppData/Local/Porgrams/Python/Python*/Lib/site-packages/*/numpy/core/include/numpy/arrayobject.h")
-endif(WIN32 OR WIN64)
+endif(${CMAKE_SYSTEM_NAME} STREQUAL "Windows")
 
 string(COMPARE EQUAL "${PYTHON_LIBRARIES}" "" result)
-if(WIN32 OR WIN64)
+if(${CMAKE_SYSTEM_NAME} STREQUAL "Windows")
 if(result)
   message(STATUS "TRYING TO FIND PYTHON SOMEWHERE ELSE")
   file(GLOB_RECURSE PYTHON_LIBRARIES "C:/Python*/libs/*.lib")
@@ -43,11 +34,9 @@ else()
   message(STATUS "PYTHON LIBRARY LINKING FROM: ")
   message(STATUS ${PYTHON_LIBRARIES})
 endif(result)
-endif(WIN32 OR WIN64)
+endif(${CMAKE_SYSTEM_NAME} STREQUAL "Windows")
 
 message(STATUS ${PYTHON_LIBRARIES})
-
-message(STATUS ${PYTHON_NUMPY_INCLUDE})
 
 ######################################CHECKS FOR C++11 SUPPORT, IF SUPPORT IS NOT PRESENT THIS CODE WILL STOP FURTHER PROCESSING############################
 include(CheckCXXCompilerFlag)
@@ -77,12 +66,10 @@ ADD_LIBRARY(PyFSA ${LIB_TYPE}
 )
 
 ##########################################SET SUFFIX OF SHARED LIBRARY BASED ON PLATFORM GENERATING IT####################################
-IF(WIN32)
-SET_TARGET_PROPERTIES(PyFSA PROPERTIES SUFFIX 32.pyd)
+IF(${CMAKE_SYSTEM_NAME} STREQUAL "Windows")
+SET_TARGET_PROPERTIES(PyFSA PROPERTIES SUFFIX .pyd)
 ELSEIF(LINUX)
 SET_TARGET_PROPERTIES(PyFSA PROPERTIES SUFFIX .so)
-ELSEIF(WIN64)
-SET_TARGET_PROPERTIES(PyFSA PROPERTIES SUFFIX 64.pyd)
-ENDIF(WIN32)
+ENDIF(${CMAKE_SYSTEM_NAME} STREQUAL "Windows")
 ##########################################LINK PyFSA WITH PYTHON LIBRARY LIBRARY FILE#########################################
 target_link_libraries(PyFSA ${PYTHON_LIBRARIES})
