@@ -3,7 +3,7 @@ before_install:
 - sudo apt-get install python-dev
 - sudo apt-get install python-numpy
 - sudo apt-get install make
-- sudo apt-get upgrade
+- Y | sudo apt-get upgrade
 
 script:
 - mkdir bin
