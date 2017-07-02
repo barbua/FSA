@@ -5,38 +5,63 @@ PROJECT(PyFSA CXX C)
 
 find_package(PythonLibs REQUIRED)
 message(STATUS ${PYTHON_INCLUDE_DIR})
+  
+if(${CMAKE_SYSTEM_NAME} STREQUAL "Windows")
+MESSAGE(WARNING "YOUR BINARIES OR THE GENERATED PYD/SO FILE WILL BE IN A FOLDER CALLED DEBUG IN THE DIRECTORY YOU RAN THE CMAKE COMMAND IN")
+file(GLOB_RECURSE PYTHON_LIBRARIES1 "C:/Users/*/AppData/Local/Programs/Python/Python*/libs/*.lib")
+endif(${CMAKE_SYSTEM_NAME} STREQUAL "Windows")
 
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+string(COMPARE EQUAL "${PYTHON_LIBRARIES1}" "" result)
+if(${CMAKE_SYSTEM_NAME} STREQUAL "Windows")
+if(result)
+  message(STATUS "TRYING TO FIND PYTHON SOMEWHERE ELSE")
+  file(GLOB_RECURSE PYTHON_LIBRARIES1 "C:/Python*/libs/*.lib")
+  string(COMPARE EQUAL "${PYTHON_LIBRARIES1}" "" result2)
+  if(result2)
+  message(FATAL ERROR "PYTHON LIBRARY AND NUMPY NOT FOUND IN DEFAULT LOCATIONS, PLEASE INSTALL IT AND ENSURE IT IS IN C:/Pythonxx OR C:/Users/<your username without anglebrackets>/AppData/Programs/...")
+  endif(result2)
+else()
+  message(STATUS "PYTHON LIBRARY LINKING FROM: ")
+  message(STATUS ${PYTHON_LIBRARIES1})
+endif(result)
+elseif(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
+	file(GLOB_RECURSE PYTHON_LIBRARIES1 "/usr/local/lib/python*/*/numpy*/*/arrayobject.h")
+endif(${CMAKE_SYSTEM_NAME} STREQUAL "Windows")
+
+message(STATUS ${PYTHON_LIBRARIES1})
+
+if(NOT "${PYTHON_LIBRARIES1}" STREQUAL "")
+	string(FIND "${PYTHON_LIBRARIES1}" "/arrayobject.h" INDEX)
+	MESSAGE(STATUS ${OUTPUT})
+	string(SUBSTRING "${PYTHON_LIBRARIES1}" 0 ${INDEX} PYTHON_LIBRARY1)
+	MESSAGE(STATUS ${PYTHON_LIBRARIES1})
+endif(NOT "${PYTHON_LIBRARIES1}" STREQUAL "")
+
+string(FIND ${PYTHON_LIBRARIES} ".a" AINDEX)
+string(FIND ${PYTHON_LIBRARIES} ".so" SOINDEX)
+string(FIND ${PYTHON_LIBRARIES} ".lib" LIBINDEX)
+string(FIND ${PYTHON_LIBRARIES} ".dll" DLLINDEX)
+
+MESSAGE(STATUS "${AINDEX}")
+
+IF(${AINDEX} GREATER 0)
+	SET (LIB_TYPE STATIC)
+ELSEIF(${SOINDEX} GREATER 0)
+	SET (LIB_TYPE SHARED)
+ELSEIF(${LIBINDEX} GREATER 0)
+	SET (LIB_TYPE STATIC)
+ELSEIF(${DLLINDEX} GREATER 0)
+	SET (LIB_TYPE SHARED)
+ENDIF(${AINDEX} GREATER 0)
 
 include_directories(
+  ${PYTHON_LIBRARY1}
   ${PYTHON_INCLUDE_DIR}
   ${PYTHON_INCLUDE_DIR}/../lib/site-packages/numpy/core/include/numpy 
   ${PYTHON_INCLUDE_DIR}/../Lib/site-packages/numpy/core/include/numpy
   ${PYTHON_INCLUDE_DIR}/include
   ./include
   )
-  
-if(${CMAKE_SYSTEM_NAME} STREQUAL "Windows")
-MESSAGE(WARNING "YOUR BINARIES OR THE GENERATED PYD/SO FILE WILL BE IN A FOLDER CALLED DEBUG IN THE DIRECTORY YOU RAN THE CMAKE COMMAND IN")
-file(GLOB_RECURSE PYTHON_LIBRARIES "C:/Users/*/AppData/Local/Programs/Python/Python*/libs/*.lib")
-endif(${CMAKE_SYSTEM_NAME} STREQUAL "Windows")
-
-string(COMPARE EQUAL "${PYTHON_LIBRARIES}" "" result)
-if(${CMAKE_SYSTEM_NAME} STREQUAL "Windows")
-if(result)
-  message(STATUS "TRYING TO FIND PYTHON SOMEWHERE ELSE")
-  file(GLOB_RECURSE PYTHON_LIBRARIES "C:/Python*/libs/*.lib")
-  string(COMPARE EQUAL "${PYTHON_LIBRARIES}" "" result2)
-  if(result2)
-  message(FATAL ERROR "PYTHON LIBRARY AND NUMPY NOT FOUND IN DEFAULT LOCATIONS, PLEASE INSTALL IT AND ENSURE IT IS IN C:/Pythonxx OR C:/Users/<your username without anglebrackets>/AppData/Programs/...")
-  endif(result2)
-else()
-  message(STATUS "PYTHON LIBRARY LINKING FROM: ")
-  message(STATUS ${PYTHON_LIBRARIES})
-endif(result)
-endif(${CMAKE_SYSTEM_NAME} STREQUAL "Windows")
-
-message(STATUS ${PYTHON_LIBRARIES})
 
 ######################################CHECKS FOR C++11 SUPPORT, IF SUPPORT IS NOT PRESENT THIS CODE WILL STOP FURTHER PROCESSING############################
 include(CheckCXXCompilerFlag)
@@ -58,7 +83,6 @@ FILE(GLOB HEADER_FILES "include/*.h")
 FILE(GLOB SOURCE_FILES "src/*.cpp")
 
 ##########################################CREATE SHARED LIBRARY CONSTRUCTED FROM OUR SOURCE CODE AND HEADER FILES#########################
-SET (LIB_TYPE SHARED)
 
 ADD_LIBRARY(PyFSA ${LIB_TYPE}
 	${HEADER_FILES}
