@@ -42,7 +42,7 @@ The folder hierarchy should look like this when you enter FSA Folder
  # WINDOWS
  
  Enter the bin folder in your FSA folder
- It should be empty. 
+ It should be empty wiith the exception of a StartHere.txt file. 
 
 Run the following commands depending on the Command line interface you are using.                                                      
 Command prompt: cmake ..\
@@ -55,4 +55,14 @@ This will generate solution files if you are using Visual Studios as your genera
 If you have an .sln file in the bin directory go ahead and click on it and open it up with Visual Studios. 
 There you will hit Build which will create the dynamic library in your bin directory!
 
-  
+# LINUX
+Enter the bin folder in your FSA folder
+It should be empty with the exception of a StartHere.txt file. 
+
+Run the following commands 
+cmake ../
+make
+
+This will generate either a libPyFSA.a, libPyFSA.so. 
+You can link to this in order to use our code. Use Header files to 
+figure out how to use our API. 
