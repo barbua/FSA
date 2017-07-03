@@ -1,0 +1,4 @@
+Run 
+cmake ../
+then run
+make
