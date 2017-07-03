@@ -44,7 +44,7 @@ The folder hierarchy should look like this when you enter FSA Folder
  Enter the bin folder in your FSA folder
  It should be empty. 
 
-Run the following commands depending on the Command line interface you are using. 
+Run the following commands depending on the Command line interface you are using.                                                      
 Command prompt: cmake ..\
 Power Shell: cmake ..\
 Git Bash: cmake ../
