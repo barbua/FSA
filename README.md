@@ -11,7 +11,7 @@ In order to get started the following things you need the following.
  - COMPUTER WITH WINDOWS OR LINUX
  
 -SOFTWARE
-  - CMAKE (VERSION 2.8 OR UP)
+  - CMAKE (VERSION 3.02 OR UP)
   - PYTHON (VERSION 2.7 OR UP)
   - NUMPY (INSTALLED INTO PYTHON) 
   - A C++ COMPILER THAT SUPPORTS C++11 OR C++0X
@@ -25,8 +25,7 @@ or running
 
 # INSTALLING OUR SOFTWARE
 
-Once you've obtained a copy of our software. 
-If you obtained the software by hitting "Clone or Download" it will come as FSA.zip. 
+Once you've obtained a copy of the software by hitting "Clone or Download" it will come as FSA.zip. 
 Unzip this file however you can and navigate into the unzipped folder named FSA.
 Otherwise, if you have cloned the repository using git clone https://github.com/barbua/FSA.git
 you can go right into the FSA folder. 
@@ -66,3 +65,6 @@ make
 This will generate either a libPyFSA.a, libPyFSA.so. 
 You can link to this in order to use our code. Use Header files to 
 figure out how to use our API. 
+
+# Using and Testing Code
+After a successful build, you can use the code in three different ways! You can implement the code in Octave/Matlab, import the module and use the function with python inputs in Python, or simply make a client program to employ the public methods in the PyFSA header file! You can also use this function in C as the API functions available to clients has been declared extern "C".
