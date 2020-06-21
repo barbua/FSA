@@ -1,8 +1,6 @@
 #ifndef PYFSA_H
 #define	PYFSA_H
 
-#include "DataMemory.h"
-
 #ifdef _DEBUG
 #undef _DEBUG
 #include <Python.h>
@@ -19,8 +17,6 @@
 #include <assert.h>
 #include <time.h>
 #include <vector>
-
-#include "Fsa.h"
 
 #define _QUOTEME(x) #x
 #define QUOTEME(x) _QUOTEME(x)

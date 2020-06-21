@@ -64,7 +64,7 @@ struct MomPars1d{
 		g0=0;
 		b0inc=0;	
 	}
-	void KeepOnly(std::vector<float> &sel){
+	void KeepOnly(std::vector<int> &sel){
 		::KeepOnly(grad,sel);
 		::KeepOnly(binc,sel);
 	}

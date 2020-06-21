@@ -864,7 +864,7 @@ inline void CleanZerosFromEnd(std::vector<Tp> &v, int nmin){
 }
 
 template<class Tp>
-void KeepOnly(std::vector<Tp> &vec, std::vector<float> &selected){
+void KeepOnly(std::vector<Tp> &vec, std::vector<int> &selected){
 	// delete from vec everything else except selected.
 	std::vector<Tp>	tmp;
 	int i,n=(int)selected.size();

@@ -1,11 +1,11 @@
 % number of observations to be generated
 N=1000;
 % number of predictors to be used
-p=1000;
+p=100;
 % number of predictors to be selected
 kstar=10;
 % number of test iterations
-nruns=100;
+nruns=10;
 % initialize the sigma matrix (i.e. convariance matrix). Note that the
 % non-zero elements are actually
 eta=.01;

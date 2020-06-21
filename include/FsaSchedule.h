@@ -24,29 +24,30 @@ int GetFsaScheduleE(int e, Tp percExp, int nExp, int maxEpoch, int kStar, int M,
 	return GetFsaSchedule(e-nExp,maxEpoch,kStar,M,mu);
 }
 
+
 template<class Tp>
-bool GetFsaIndices(std::vector<float> &idx, const std::vector<Tp> &sumSq, int nKeep, int strict=0){
-	int n=(int)sumSq.size();
-	if (nKeep>=n)
+bool GetFsaIndices(std::vector<int> &idx, const std::vector<Tp> &sumSq, int nKeep, int strict = 0) {
+	int n = (int)sumSq.size();
+	if (nKeep >= n)
 		return false;
-	std::vector<Tp> t=sumSq;
-	std::sort(t.begin(),t.end(),std::greater<Tp>());
-	Tp thr=(t[nKeep]+t[nKeep-1])/2;//printf("t%g ",thr);
+	std::vector<Tp> t = sumSq;
+	std::sort(t.begin(), t.end(), std::greater<Tp>());
+	Tp thr = (t[nKeep] + t[nKeep - 1]) / 2;//printf("t%g ",thr);
 	idx.clear();
-	if (strict){
-		for (int i=0;i<n;++i) {
+	if (strict) {
+		for (int i = 0; i<n; ++i) {
 			if (sumSq[i]>thr)
 				idx.push_back(i);
-		}	
-		for (int i=0;i<n;++i) {
-			if (sumSq[i]==thr&&idx.size()<nKeep)
-				idx.push_back(static_cast<float>(i));
 		}
-		std::sort(idx.begin(),idx.end(),std::less<int>());	
+		for (int i = 0; i<n; ++i) {
+			if (sumSq[i] == thr&&idx.size()<nKeep)
+				idx.push_back(i);
+		}
+		std::sort(idx.begin(), idx.end(), std::less<int>());
 	}
-	else{
-		for (int i=0;i<n;++i) {
-			if (sumSq[i]>=thr)
+	else {
+		for (int i = 0; i<n; ++i) {
+			if (sumSq[i] >= thr)
 				idx.push_back(i);
 		}
 	}

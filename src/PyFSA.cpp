@@ -1,4 +1,5 @@
 #include "PyFSA.h"
+#include "Fsa.h"
 
 using namespace std;
 
@@ -12,8 +13,10 @@ using namespace std;
 	-1,\
 	myextension_methods\
 };
-#define PYMODULEINITIALIZING PyMODINIT_FUNC PyInit_TrainLinFSA(void){\
+
+#define PYMODULEINITIALIZING PyMODINIT_FUNC PyInit_PyFSA(void){\
 	Py_Initialize();\
+	import_array();\
 	return PyModule_Create(&TrainLinFSA_py_module);\
 }
 #define PYACCESSVALUE int d=fo->ob_digit[1];
@@ -69,7 +72,7 @@ void GetVector(std::vector<float> &v, const PyArrayObject* src) {
 		int n = (int)PyArray_DIM(src,0);
 		v.resize(n);
         for (long int i = 0; i < n; i++) {
-			double f=*reinterpret_cast<double*>(PyArray_GETPTR1(src,i));
+			float f=*reinterpret_cast<float*>(PyArray_GETPTR1(src,i));
 			v[i]=(float)f;
 			//printf("%1.2f,",f);
         }
@@ -139,7 +142,7 @@ bool GetMatrix(std::vector<std::vector<float>> &M, const PyArrayObject* src) {
 		vector<float> &v=M[i];
 		v.resize(nc);
         for (long int j = 0; j < nc; j++) {
-			double f=*reinterpret_cast<double*>(PyArray_GETPTR2(src,i,j));
+			float f=*reinterpret_cast<float*>(PyArray_GETPTR2(src,i,j));
 			v[j]=(float)f;
         }
 		if (i<0){
@@ -198,15 +201,17 @@ PyObject* TrainLinFSA_py(PyObject *self, PyObject *args) {
 	int kstar,nEpochs=100,minibatch=32,verb=0,loss;
 	float eta=1.f,mu=100,mom=0.9f,ridge;
 
-    if (!PyArg_ParseTuple(args, "O!O!iif|fiffii",
-                          &PyArray_Type, &pyData,&PyArray_Type, &pyY,&loss,&kstar,&ridge,&eta,&nEpochs,&mu,&mom,&minibatch,&verb)) {
-        return NULL;
+    if (!PyArg_ParseTuple(args, "O!O!iif|fiffii", &PyArray_Type, &pyData, &PyArray_Type, &pyY, &loss,&kstar,&ridge,&eta,&nEpochs,&mu,&mom,&minibatch,&verb)) 
+	{
+		PyErr_SetString(PyExc_TypeError, "Check the types of your arguments. Currently only numpy float32 and below are supported.");
+		return NULL;
     }
 	GetMatrix(data._x,pyData);
 	GetVector(data._y,pyY);
+	printf("y[0]=%1.2f,y[1]=%1.2f", data._y[0], data._y[1]);
 	vector<float> b;
 	float b0,lv=0;
-	vector<float> sel;
+	vector<int> sel;
 	switch(loss){
 	case 0:
 		lv=TrainLinFsa<LogisticLoss>(b,b0,sel, data,data.nObs(),kstar,0.8f,0,mu,nEpochs,eta,minibatch,mom,ridge,verb);break;
