@@ -5,7 +5,9 @@ https://arxiv.org/abs/1310.2880
 
 # GETTING STARTED
 
-In order to get started the following things you need the following. 
+A simple version implemented in pyTorch is available in the /Python directory.
+
+For the heavy-duty version implemented in C++ you need the following:
 
 -HARDWARE
  - COMPUTER WITH WINDOWS OR LINUX
