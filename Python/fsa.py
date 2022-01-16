@@ -29,12 +29,11 @@ class FSA:
         for i in range(self.Niter):
             optimizer.zero_grad()  # zero the gradient buffers
             xw = self.predict(X)
-            # print(xw.shape,y.shape)
             yxw = y * xw.squeeze()
             l2 = torch.log(1 + torch.exp(-yxw))
-            loss1 = torch.mean(l2[y > 0]) + torch.mean(l2[y < 0]) + self.s * torch.sum(
-                self.w ** 2) + self.s * self.w0 ** 2
-            # loss1 = torch.mean(l2)+self.s*torch.sum(self.w**2)+self.s*self.w0**2
+            #loss1 = torch.mean(l2[y > 0]) + torch.mean(l2[y < 0]) + self.s * torch.sum(
+            #    self.w ** 2) + self.s * self.w0 ** 2
+            loss1 = torch.mean(l2)+self.s*torch.sum(self.w**2)+self.s*self.w0**2
             loss1.backward()
             optimizer.step()
             m = int(self.k + (p - self.k) * max(0, (self.Niter - 2 * i) / (2 * i * self.mu + self.Niter)))
